@@ -1,0 +1,43 @@
+<!-- <div class="stay-filters flex gap-8 overflow-x-scroll mx-12">
+    <div class="stay flex gap-2 py-1 my-3 flex-col items-center justify-between capitalize text-xs whitespace-nowrap  opacity-60 hover:text-black hover:opacity-100" 
+    *ngFor="let s of stay_types">
+        <div class="stay-img w-6  ">
+            <img src="{{s.imgUrl}}"  alt="{{s.type}}">
+        </div>
+        <div>{{s.type}}</div>
+    </div>
+</div> -->
+<div class="filters flex items-center gap-9 mt-5">
+    <ngx-slick-carousel class="carousel" 
+      #slickModal="slick-carousel" 
+      [config]="slideConfig" 
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)"
+      >
+        <div ngxSlickItem 
+        #slide
+        *ngFor="let slide of stay_types;let i='index'" 
+        class="slide opacity-60 hover:text-black hover:opacity-100 "
+        (click)="addRemove(i)">
+            <div class="filter-img w-6 whitespace-nowrap text-xs text-center flex flex-col items-center py-1 my-3 gap-2 ">
+                <div class="stay-img  ">
+                    <img src="{{slide.imgUrl}}"  alt="{{slide.type}}">
+                </div>
+                <div>{{slide.type}}</div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+    <div class="more-filters cursor-pointer py-2 rounded-xl border-[1px]">
+        <div class="flex gap-2 text-xs px-4 py-2 items-center">
+            <div class="filter-icon">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display:block;height:14px;width:14px;fill:currentColor" aria-hidden="true" role="presentation" focusable="false"><path d="M5 8c1.306 0 2.418.835 2.83 2H14v2H7.829A3.001 3.001 0 1 1 5 8zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6-8a3 3 0 1 1-2.829 4H2V4h6.17A3.001 3.001 0 0 1 11 2zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
+            </div>
+            <div>Filters</div>
+        </div>
+    </div>
+</div>
+
+
+
