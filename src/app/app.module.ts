@@ -9,22 +9,31 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { StaysComponent } from './stays/stays.component';
 import { StayPageComponent } from './stays/stay-page/stay-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarComponent } from './calendar/calendar.component';
+import { IgxCalendarModule, IgxSnackbarModule, IgxDialogModule,IgxButtonModule, IgxProgressBarModule } from 'igniteui-angular';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FiltersComponent,
     StaysComponent,
-    StayPageComponent
+    StayPageComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    HammerModule
+    HammerModule,
+    IgxCalendarModule,
+	  IgxSnackbarModule,
+    IgxDialogModule,
+    IgxButtonModule,
+    IgxProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

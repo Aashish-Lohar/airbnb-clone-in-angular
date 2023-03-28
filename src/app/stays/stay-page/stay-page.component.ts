@@ -9,10 +9,11 @@ export class StayPageComponent {
   constructor(){
     // const svgBase64 = `data:image/svg+xml;base64,${btoa(this.svgString)}`;
     this.amenities = this.amenities.filter((a)=>a.img)
+    this.currentValue =4.5
   }
+  currentValue!: number;
+
   imageSvg(img:any){
-    // console.log(img);
-    
     return `data:image/svg+xml;base64,${btoa(img)}`
   }
   stay_images = [
@@ -124,4 +125,13 @@ export class StayPageComponent {
         "id": "36"
     }
 ]
+
+ratingCriteria = [
+        {title:'Cleanliness', rating:4.9},
+        {title:'Accuracy', ratings:4.8},
+        {title:'Communication', rating:5},
+        {title:'Location', rating:4.9},
+        {title:'Check-in', ratings:4.8},
+        {title:'Value', ratings:4.8},
+    ]
 }
