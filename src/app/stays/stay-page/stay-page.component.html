@@ -63,7 +63,7 @@
     </div>
 
     <!-- stay-details  -->
-    <div class="stay-details realtive  flex">
+    <div class="stay-details realtive border-b-[1px]   flex">
         <div class="w-[60%]">
             <div class="stay-and-owner-details flex  justify-between pt-12 pb-6 border-b-[1px] ">
                 <div class="owner-name">
@@ -184,9 +184,6 @@
                 <app-calendar></app-calendar>
             </div>
 
-
-
-
         </div>
 
         <!-- pay for stay  -->
@@ -223,13 +220,17 @@
         <div>
             <div class="ratings-criteria">
                 <div class="criterias flex items-stretch flex-wrap">
-                    <div *ngfor="let rate of ratingCriteria" >
-                        <div class="rating-title">{{rate.title}} </div>
-                        <igx-linear-bar
-                            [value]="rate.rating"
-                            [max]="5"
-                            [textVisibility]="false"
-                        ></igx-linear-bar>
+                    <div class="w-[50%] mb-4 flex items-center justify-between"  *ngFor="let r of ratingCriteria">
+                        <div class="w-[30%] rating-title">{{r.title}} </div>
+                        <div class="w-[20%] flex items-center mr-28">
+                            <igx-linear-bar
+                                [value]="r.rating"
+                                [max]="5"
+                                [textVisibility]="false"
+                                class=" flex-none mr-4"
+                            ></igx-linear-bar>
+                            <span>{{r.rating}}</span>
+                        </div>
                     </div>
                 </div>
             </div>

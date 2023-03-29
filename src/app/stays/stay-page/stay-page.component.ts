@@ -127,11 +127,11 @@ export class StayPageComponent {
 ]
 
 ratingCriteria = [
-        {title:'Cleanliness', rating:4.9},
-        {title:'Accuracy', ratings:4.8},
-        {title:'Communication', rating:5},
-        {title:'Location', rating:4.9},
-        {title:'Check-in', ratings:4.8},
-        {title:'Value', ratings:4.8},
+        {"title":'Cleanliness', "rating":4.9},
+        {"title":'Accuracy', "rating":4.8},
+        {"title":'Communication', "rating":5},
+        {"title":'Location', "rating":4.9},
+        {"title":'Check-in', "rating":4.8},
+        {"title":'Value', "rating":4.8},
     ]
 }
