@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./stays.component.scss']
 })
 export class StaysComponent {
+
+  constructor() {}
+  ngOnInit(): void {}
+  
+  stays = [1,2,3,4,5,6,7,8]
   slides = [
   { img: "https://a0.muscache.com/im/pictures/3321347d-8c65-4d06-93f3-4c2e2162512c.jpg?im_w=720" },
   { img: "https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/2fd911ac-1015-4f51-9ed2-42228956ad8d.jpeg?im_w=720" },
@@ -15,7 +20,7 @@ export class StaysComponent {
   { img: "https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/2fd911ac-1015-4f51-9ed2-42228956ad8d.jpeg?im_w=720" }, 
 ];
 slideConfig = { slidesToShow: 1, slidesToScroll: 1 ,dots:true,
-  focusOnSelect: true,autoplay:true,infinite: false,};
+  focusOnSelect: true,autoplay:false,infinite: false,};
 // addSlide() {
 //   this.stay_types.push({ img: 'http://placehold.it/350x150/777777' });
 // }
@@ -31,7 +36,6 @@ afterChange(e: any) {
 beforeChange(e: any) {
   // console.log('beforeChange');
 }
-constructor() {}
-ngOnInit(): void {}
+
 
 }

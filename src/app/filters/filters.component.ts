@@ -6,26 +6,12 @@ import { Component, ElementRef, QueryList, Renderer2, ViewChildren } from '@angu
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent {
+  path!:string;
   @ViewChildren('slide')
   myClassElements!: QueryList<ElementRef>;
-  constructor(private renderer:Renderer2) {
-    // setTimeout(() => {
-    //   let button = document.querySelector(".slick-prev");
-    //   let img = document.createElement("img");
-    //   img.src = "../../assets/prev.png";
-    //   button!.innerHTML = "";
-    //   button!.appendChild(img);    
-    // }, 1000);
-  
-    // setTimeout(() => {
-    //   let button = document.querySelector(".slick-next");
-    //   let img = document.createElement("img");
-    //   img.src = "../../assets/next.png";
-    //   button!.innerHTML = "";
-    //   button!.appendChild(img);    
-    // }, 1000);
+  constructor(private renderer:Renderer2) {}
+  ngOnInit(): void {
   }
-  ngOnInit(): void {}
   ngAfterViewInit() {
       let button1 = document.querySelector(".slick-prev");
       let img1 = document.createElement("img");
@@ -42,7 +28,6 @@ export class FiltersComponent {
 
   addRemove(i:any){
     this.myClassElements.forEach((ele, index) => {
-      if (index !== i) {
         this.renderer.removeClass(ele.nativeElement, 'active');
         ele.nativeElement.addEventListener('mouseenter', () => {
           ele.nativeElement.style.opacity = 1;
@@ -50,7 +35,6 @@ export class FiltersComponent {
         ele.nativeElement.addEventListener('mouseleave', () => {
           ele.nativeElement.style.opacity = 0.6;
         })
-      }
     });
 
     this.renderer.addClass(this.myClassElements.toArray()[i].nativeElement, 'active');
