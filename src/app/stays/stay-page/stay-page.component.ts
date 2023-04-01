@@ -10,16 +10,10 @@ export class StayPageComponent {
     stayId!:any;
   constructor(private route:ActivatedRoute){
     this.amenities = this.amenities.filter((a)=>a.img)
-    this.currentValue =4.5
   }
-<<<<<<< HEAD
-  currentValue!: number;
-
-=======
   ngOnInit(){
       this.stayId = this.route.snapshot.paramMap.get("id");
   }
->>>>>>> backup2
   imageSvg(img:any){
     return `data:image/svg+xml;base64,${btoa(img)}`
   }
