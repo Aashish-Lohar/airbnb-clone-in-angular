@@ -181,7 +181,6 @@
     
             <!-- booking calendar  -->
             <div class="booking-calendar py-12  border-b-[1px]  text-sm !important">
-                <app-calendar></app-calendar>
             </div>
 
         </div>
@@ -223,12 +222,7 @@
                     <div class="w-[50%] mb-4 flex items-center justify-between"  *ngFor="let r of ratingCriteria">
                         <div class="w-[30%] rating-title">{{r.title}} </div>
                         <div class="w-[20%] flex items-center mr-28">
-                            <igx-linear-bar
-                                [value]="r.rating"
-                                [max]="5"
-                                [textVisibility]="false"
-                                class=" flex-none mr-4"
-                            ></igx-linear-bar>
+
                             <span>{{r.rating}}</span>
                         </div>
                     </div>
