@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 <app-filters></app-filters>
+=======
+<app-filters ></app-filters>
+>>>>>>> backup2
 <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6 mt-8">
     
-    <div class="stay relative">   
+    <div class="stay relative mb-6" *ngFor="let s of stays">   
         <ngx-slick-carousel class="carousel" 
           #slickModal="slick-carousel" 
           [config]="slideConfig" 
@@ -9,8 +13,8 @@
           (breakpoint)="breakpoint($event)"
           (afterChange)="afterChange($event)"
           (beforeChange)="beforeChange($event)">
-            <div ngxSlickItem *ngFor="let slide of slides" class="slide cursor-pointer" routerLink="/stay/1">
-                <div class="flex  h-64 w-full flex-col justify-end rounded-xl relative overflow-hidden"
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide cursor-pointer"[routerLink]="['/stay',1]" >
+                <div class="flex  h-80 lg:h-64 w-full flex-col justify-end rounded-xl relative overflow-hidden"
                 style="background-position: center center;background-size: cover;
                     background-repeat: no-repeat;">
                     <img src="{{ slide.img }}" alt="AirMax Pro"
@@ -19,77 +23,39 @@
                 
             </div>
         </ngx-slick-carousel>
-        <div class="absolute top-4 right-8 ">
+        <div class="absolute top-[1.7rem] right-4 md:right-10 lg:top-6 lg:right-8 ">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: #fff; stroke-width: 2; overflow: visible;"><path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"></path></svg>
+        </div>
+        <div class="md:w-[88%] lg:w-[88%] mx-auto">
+            <div class="flex justify-between">
+                <div class="stay-name">
+                    Jibhi, India
+                </div>
+                <div class="star-rating">
+                    <div class="star flex items-baseline justify-between gap-1">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 14px; width: 14px; fill: currentcolor;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
+                        <span>4.9</span>
+                    </div>
+                </div>
+            </div>
+            <div class="font-custom distance opacity-60">
+                <span>335 kilometres away</span>
+            </div>
+            <div class="stay-dates font-custom opacity-60 pb-1">
+                <span>4–9 May</span>
+            </div>
+            <div class="price ">
+                <span>₹6,846</span> <span class="font-custom opacity-60"> night</span>
+            </div>
         </div>
     </div>
 
-    <div class="stay relative">   
-        <ngx-slick-carousel class="carousel" 
-          #slickModal="slick-carousel" 
-          [config]="slideConfig" 
-          (init)="slickInit($event)"
-          (breakpoint)="breakpoint($event)"
-          (afterChange)="afterChange($event)"
-          (beforeChange)="beforeChange($event)">
-            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                <div class="flex  h-64 w-full flex-col justify-end rounded-md relative overflow-hidden"
-                style="background-position: center center;background-size: cover;
-                    background-repeat: no-repeat;">
-                    <img src="{{ slide.img }}" alt="AirMax Pro"
-                    class="object-cover w-full h-full  rounded-2xl z-0" />
-                </div>
-                
-            </div>
-        </ngx-slick-carousel>
-        <div class="absolute top-4 right-8 ">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: #fff; stroke-width: 2; overflow: visible;"><path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"></path></svg>
-        </div>
-    </div>
+</div>
 
-    <div class="stay relative">   
-        <ngx-slick-carousel class="carousel" 
-          #slickModal="slick-carousel" 
-          [config]="slideConfig" 
-          (init)="slickInit($event)"
-          (breakpoint)="breakpoint($event)"
-          (afterChange)="afterChange($event)"
-          (beforeChange)="beforeChange($event)">
-            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                <div class="flex  h-64 w-full flex-col justify-end rounded-md relative overflow-hidden"
-                style="background-position: center center;background-size: cover;
-                    background-repeat: no-repeat;">
-                    <img src="{{ slide.img }}" alt="AirMax Pro"
-                    class="object-cover w-full h-full  rounded-2xl z-0" />
-                </div>
-                
-            </div>
-        </ngx-slick-carousel>
-        <div class="absolute top-4 right-8 ">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: #fff; stroke-width: 2; overflow: visible;"><path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"></path></svg>
-        </div>
-    </div>
+<div class="map-list">
+    <div class="map">
 
-    <div class="stay relative">   
-        <ngx-slick-carousel class="carousel" 
-          #slickModal="slick-carousel" 
-          [config]="slideConfig" 
-          (init)="slickInit($event)"
-          (breakpoint)="breakpoint($event)"
-          (afterChange)="afterChange($event)"
-          (beforeChange)="beforeChange($event)">
-            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                <div class="flex  h-64 w-full flex-col justify-end rounded-md relative overflow-hidden"
-                style="background-position: center center;background-size: cover;
-                    background-repeat: no-repeat;">
-                    <img src="{{ slide.img }}" alt="AirMax Pro"
-                    class="object-cover w-full h-full  rounded-2xl z-0" />
-                </div>
-                
-            </div>
-        </ngx-slick-carousel>
-        <div class="absolute top-4 right-8 ">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: rgba(0, 0, 0, 0.5); height: 24px; width: 24px; stroke: #fff; stroke-width: 2; overflow: visible;"><path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"></path></svg>
-        </div>
+        
     </div>
+    <div class="list"></div>
 </div>

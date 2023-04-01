@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-stay-page',
@@ -6,13 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./stay-page.component.scss']
 })
 export class StayPageComponent {
-  constructor(){
-    // const svgBase64 = `data:image/svg+xml;base64,${btoa(this.svgString)}`;
+    stayId!:any;
+  constructor(private route:ActivatedRoute){
     this.amenities = this.amenities.filter((a)=>a.img)
     this.currentValue =4.5
   }
+<<<<<<< HEAD
   currentValue!: number;
 
+=======
+  ngOnInit(){
+      this.stayId = this.route.snapshot.paramMap.get("id");
+  }
+>>>>>>> backup2
   imageSvg(img:any){
     return `data:image/svg+xml;base64,${btoa(img)}`
   }
@@ -24,6 +31,30 @@ export class StayPageComponent {
      "https://a0.muscache.com/im/pictures/3321347d-8c65-4d06-93f3-4c2e2162512c.jpg?im_w=720" ,
      "https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/2fd911ac-1015-4f51-9ed2-42228956ad8d.jpeg?im_w=720" , 
   ];
+
+  slides = [
+    { img: "https://a0.muscache.com/im/pictures/3321347d-8c65-4d06-93f3-4c2e2162512c.jpg?im_w=720" },
+    { img: "https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/2fd911ac-1015-4f51-9ed2-42228956ad8d.jpeg?im_w=720" },
+    { img: 'https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/6e6e20e5-11d6-4917-ba87-74c48bd3d38f.jpeg?im_w=720' },
+    { img: 'https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/60318684-d6a1-4d63-b471-95729f7a2e18.jpeg?im_w=720' },
+    { img: "https://a0.muscache.com/im/pictures/3321347d-8c65-4d06-93f3-4c2e2162512c.jpg?im_w=720" },
+    { img: "https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/2fd911ac-1015-4f51-9ed2-42228956ad8d.jpeg?im_w=720" }, 
+  ];
+  slideConfig = { slidesToShow: 1, slidesToScroll: 1 ,dots:true,
+    focusOnSelect: true,autoplay:true,infinite: false,};
+
+    slickInit(e: any) {
+        // console.log('slick initialized');
+      }
+      breakpoint(e: any) {
+        // console.log('breakpoint');
+      }
+      afterChange(e: any) {
+        // console.log('afterChange');
+      }
+      beforeChange(e: any) {
+        // console.log('beforeChange');
+      }
 
   amenities = [
     { 

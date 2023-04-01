@@ -8,6 +8,29 @@
 }
 
 
+
+@mixin devices ($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tablet {    
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == ipad {    
+    @media only screen and (min-width:768px) and (max-width: 1110px) {
+      @content;
+    }
+  }
+ 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 481px) {
+      @content;
+    }
+  }
+}
+
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -41,8 +64,14 @@ body{
         width: 83%;
         margin: 0 0 0 3rem;
         position: relative;
+        @include devices(ipad) {
+            width: 70%!important;
+        }
+        @include devices(mobile) {
+            margin: 0;
+            width: 96%!important;
+        }
         
-        // background: rgb(14, 13, 13);
         .slick-prev{
             // display: none!important;
             display: block!important;
@@ -91,7 +120,10 @@ body{
         
         
       }
+      
 }
+
+
 
 
 
@@ -103,8 +135,12 @@ body{
 .stay{
     .slick-slider {
         width: 88%;
-        margin: auto;
+        margin: 0.8rem auto!important;
         position: relative;
+
+        @include devices(mobile) {
+            width: 100%!important;
+        }
         
         // background: rgb(14, 13, 13);
         .slick-prev{
@@ -142,6 +178,7 @@ body{
         }
         
       }
+      
     
       .slick-slider:hover{
         .slick-prev{
