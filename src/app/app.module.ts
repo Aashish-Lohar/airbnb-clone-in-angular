@@ -9,20 +9,24 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { StaysComponent } from './stays/stays.component';
 import { StayPageComponent } from './stays/stay-page/stay-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MapComponent } from './map/map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FiltersComponent,
     StaysComponent,
-    StayPageComponent
+    StayPageComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    HammerModule
+    HammerModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]

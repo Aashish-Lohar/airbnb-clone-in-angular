@@ -1,5 +1,5 @@
 <app-filters ></app-filters>
-<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6 mt-8">
+<div *ngIf="list" class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6 mt-8">
     
     <div class="stay relative mb-6" *ngFor="let s of stays">   
         <ngx-slick-carousel class="carousel" 
@@ -46,12 +46,31 @@
         </div>
     </div>
 
+    
 </div>
+<app-map *ngIf="!list"></app-map>
 
-<div class="map-list">
-    <div class="map">
-
-        
+<div class="map-list sticky bottom-16 z-[410]">
+    <div *ngIf="list" class="map  flex justify-center">
+        <button (click)="list=false" class=" hover:scale-105 transition-transform ease-in-out duration-200 py-3 px-5 text-sm rounded-3xl text-white bg-[#222222]">
+            <div class="show-map flex justify-center items-center">
+                <span>Show map</span>
+                <div class="ml-2">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: #fff;"><path d="M31.245 3.747a2.285 2.285 0 0 0-1.01-1.44A2.286 2.286 0 0 0 28.501 2l-7.515 1.67-10-2L2.5 3.557A2.286 2.286 0 0 0 .7 5.802v21.95a2.284 2.284 0 0 0 1.065 1.941A2.29 2.29 0 0 0 3.498 30l7.515-1.67 10 2 8.484-1.886a2.285 2.285 0 0 0 1.802-2.245V4.247a2.3 2.3 0 0 0-.055-.5zM12.5 25.975l-1.514-.303L9.508 26H9.5V4.665l1.514-.336 1.486.297v21.349zm10 1.36l-1.515.337-1.485-.297V6.025l1.514.304L22.493 6h.007v21.335z"></path></svg>
+                </div>
+            </div>
+        </button>
     </div>
-    <div class="list"></div>
+    <div *ngIf="!list" class="list flex justify-center">
+        <button (click)="list=true" class="hover:scale-105 transition-transform ease-in-out duration-200 py-3 px-5 text-sm rounded-3xl text-white bg-[#222222]">
+            <div class="show-map flex justify-center items-center">
+                <span>Show list</span>
+                <div class="ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 16px; width: 16px; fill: #fff;"><path fill-rule="evenodd" d="M2.5 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM15 12v2H6v-2h9zM2.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM15 7v2H6V7h9zM2.5 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM15 2v2H6V2h9z"></path></svg>
+                </div>
+            </div>
+        </button>
+    </div>
 </div>
+
+
