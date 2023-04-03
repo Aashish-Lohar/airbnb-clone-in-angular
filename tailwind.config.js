@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
+  important: false,
   theme: {
     extend: {},
     fontFamily: {

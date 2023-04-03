@@ -7,7 +7,7 @@
         <div>{{s.type}}</div>
     </div>
 </div> -->
-<div class=" sticky top-0 md:top-[5.5rem] lg:top-[5.5rem] z-[1] bg-white filters flex items-center gap-9 mt-5">
+<div class=" sticky top-[4.5rem] md:top-[5.5rem] lg:top-[5.5rem] z-[1] bg-white filters flex items-center gap-9 lg:mt-5">
     <ngx-slick-carousel class="carousel" 
       #slickModal="slick-carousel" 
       [config]="slideConfig" 
@@ -18,14 +18,14 @@
       >
         <div ngxSlickItem 
         #slide
-        *ngFor="let slide of stay_types;let i='index'" 
-        class="slide opacity-60 hover:text-black hover:opacity-100 "
+        *ngFor="let slide of data;let i='index'" 
+        class="slide opacity-60 transition-opacity ease-in duration-200 hover:text-black hover:opacity-100 border-b-2 border-b-transparent  hover:border-b-slate-300"
         (click)="addRemove(i)">
-            <div class="filter-img w-6 whitespace-nowrap text-xs text-center flex flex-col items-center py-1 my-3 gap-2 ">
-                <div class="stay-img  ">
-                    <img src="{{slide.imgUrl}}"  alt="{{slide.type}}">
+            <div class="filter-img whitespace-nowrap text-xs text-center flex flex-col items-center py-1 my-3 gap-2  ">
+                <div class="stay-img  w-6 ">
+                    <img src="{{slide.image}}"  alt="{{slide.title}}">
                 </div>
-                <div>{{slide.type}}</div>
+                <div class="">{{slide.title}}</div>
             </div>
         </div>
     </ngx-slick-carousel>

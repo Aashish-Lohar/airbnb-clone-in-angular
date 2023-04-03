@@ -11,6 +11,7 @@ import { StayPageComponent } from './stays/stay-page/stay-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     FiltersComponent,
     StaysComponent,
     StayPageComponent,
-    MapComponent
+    MapComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

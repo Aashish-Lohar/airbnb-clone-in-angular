@@ -57,6 +57,7 @@ body{
 
 .active{
     opacity: 1!important;
+    border-bottom: 2px solid black;
 }
 
 .filters{
@@ -88,6 +89,10 @@ body{
                 // color: black;
                 font-weight: 700;
             }
+
+            @include devices(mobile) {
+                display: none!important;
+            }
         }
         .slick-next{
             display: block !important;
@@ -106,13 +111,19 @@ body{
                 // color: black;
                 font-weight: 700;
             }
+            @include devices(mobile) {
+                display: none!important;
+            }
         }
         .slick-list{
             // margin-right: 8rem;
             .slick-track{
                 // margin-left: 1rem;
                 display: flex;
-                gap: 3rem;
+                gap: 2rem;
+                @include devices(mobile) {
+                    gap: 3rem;
+                }
                 .slide{
                 }
             }
