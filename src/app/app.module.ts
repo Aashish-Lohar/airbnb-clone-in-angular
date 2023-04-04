@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapComponent } from './map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FooterComponent } from './footer/footer.component';
+import { SignupComponent } from './signup/signup.component';
+import { StopBodyScrollDirective } from './stop-body-scroll.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { FooterComponent } from './footer/footer.component';
     StaysComponent,
     StayPageComponent,
     MapComponent,
-    FooterComponent
+    FooterComponent,
+    SignupComponent,
+    StopBodyScrollDirective
   ],
   imports: [
     BrowserModule,

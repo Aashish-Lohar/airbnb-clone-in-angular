@@ -1,0 +1,69 @@
+<!-- <button (click)="signupClose()" >clickme</button> -->
+<div class="flex w-screen fixed top-0 bottom-0 h-screen  bg-black opacity-30 z-[415]">
+    
+</div>
+<div class="overflow-hidden" StopBodyScroll>
+
+    <div #signup id="signup" class=" top-full ease-in-out duration-[5000] signup-card card absolute  left-[50%] translate-x-[-50%] z-[416] bottom-0 md:bottom-auto lg:bottom-auto w-full md:w-[45%] lg:w-[45%]">
+        <div class="relative header text-center border-b-[1px] pb-4">
+            <div class="signup-close absolute">
+                <button (click)="signupClose()" >
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg>
+                </button>
+            </div>
+            <div>
+                <h2 class="">Log in or sign up</h2>
+            </div>
+        </div>
+    
+        <div class="login-form">
+            <div class="py-6 text-xl"><span>Welcome to Airbnb</span></div>
+            <div class="continue-with-phone">
+                <label for="countries" class="block text-sm text-gray-900 rounded-t-lg  border border-gray-300 ">
+                    <div class="font-custom text-xs pt-3 px-4"><span>Country/Region</span></div>
+                    <select id="countries" class=" text-base font-custom font-bold text-gray-900 block w-full pl-2.5 pb-3">
+                        <option selected>Choose a country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="FR">France</option>
+                        <option value="DE">Germany</option>
+                    </select>
+                </label>
+        
+                <div class="relative font-custom font-bold">
+                    <input type="number" id="floating_filled" class="block rounded-b-lg px-4 pb-2.5 pt-5 w-full text-sm border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-0  peer" placeholder=" " />
+                    <label for="floating_filled" class="opacity-60 absolute duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-3.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Phone number</label>
+                </div>
+        
+                <div class="font-custom text-xs py-2">
+                    <p>We’ll call or text you to confirm your number. Standard message and data rates apply. <span class="font-bold underline cursor-pointer">Privacy Policy</span></p>
+                </div>
+            </div>
+    
+            <div class="continue-button text-white text-center py-3 mt-2 cursor-pointer px-6 rounded-md bg-gradient-to-r from-[#E61E4D] via-[#E31C5F] to-[#D70466]">
+                <button><span>Continue</span></button>
+            </div>
+    
+            <div class="flex items-center justify-center my-4">
+                <!-- <span class="w-[40%] h-1 bg-slate-500 inline-block">-</span> -->
+                <hr class="w-[45%] font-bold ">
+                <span class="px-4 py-[1px] ">or</span>
+                <hr class="w-[45%] font-bold ">
+                <!-- <span class="w-[40%] bg-slate-500">-</span> -->
+            </div>
+    
+            <div class="continue-with-email">
+                <button class="relative w-full py-3 px-6 border-[1px] border-black rounded-lg">
+                    <div class="absolute email-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 20px; width: 20px; fill: currentcolor;"><path d="M30.5105,5.87921A5.06207,5.06207,0,0,0,26,3H6A5.06215,5.06215,0,0,0,1.48932,5.87946,4.9444,4.9444,0,0,0,1,8V24a5.00588,5.00588,0,0,0,5,5H26a5.00588,5.00588,0,0,0,5-5V8A4.94373,4.94373,0,0,0,30.5105,5.87921ZM6,5H26a2.97234,2.97234,0,0,1,1.77252.59253l-9.8194,8.41675a2.98373,2.98373,0,0,1-3.90527,0l-9.82013-8.417A2.97238,2.97238,0,0,1,6,5ZM29,24a3.00328,3.00328,0,0,1-3,3H6a3.00328,3.00328,0,0,1-3-3V8a2.96566,2.96566,0,0,1,.10266-.73773l9.64343,8.26556a4.97272,4.97272,0,0,0,6.50782,0L28.89728,7.262A2.96542,2.96542,0,0,1,29,8Z"></path></svg>
+                    </div>
+                    <div class="text-center">Continue with email</div>
+                </button>
+            </div>
+    
+        </div>
+    
+    </div>
+</div>
+
+

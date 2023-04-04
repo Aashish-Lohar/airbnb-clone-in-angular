@@ -57,7 +57,12 @@ body{
 
 .active{
     opacity: 1!important;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black!important;
+}
+
+.active-nav{
+    color:#d70466;
+    opacity: 1;
 }
 
 .filters{

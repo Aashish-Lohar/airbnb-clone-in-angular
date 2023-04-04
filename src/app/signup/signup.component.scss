@@ -1,0 +1,15 @@
+#signup {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    top:100%
+  }
+
+  to {
+    top:3rem
+  }
+}
+

@@ -1,6 +1,7 @@
-<app-header></app-header>
+<app-header (signupOpen)="onSignupClick($event)" ></app-header>
 
 <!-- <app-stays></app-stays> -->
 <router-outlet></router-outlet>
+<app-signup [slideUp]="slideAnimation" *ngIf="signupPopUp" (signupCloseEvent)="onSignupClose($event)" ></app-signup>
 
 <app-footer></app-footer>

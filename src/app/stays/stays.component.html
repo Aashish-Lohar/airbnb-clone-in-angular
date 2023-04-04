@@ -1,7 +1,7 @@
 <app-filters ></app-filters>
 <div *ngIf="list" class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-6">
     
-    <div class="stay relative mb-6" *ngFor="let s of stays">   
+    <div class="stay relative mb-6 cursor-pointer" *ngFor="let s of stays">   
         <ngx-slick-carousel class="carousel" 
           #slickModal="slick-carousel" 
           [config]="slideConfig" 
@@ -48,9 +48,12 @@
 
     
 </div>
+<!-- map component  -->
 <app-map *ngIf="!list"></app-map>
 
-<div class="map-list sticky bottom-16 z-[410]">
+
+<!-- map and list buttons  -->
+<div class="map-list sticky bottom-24 z-[410]">
     <div *ngIf="list" class="map  flex justify-center">
         <button (click)="list=false" class=" hover:scale-105 transition-transform ease-in-out duration-200 py-3 px-5 text-sm rounded-3xl text-white bg-[#222222]">
             <div class="show-map flex justify-center items-center">
