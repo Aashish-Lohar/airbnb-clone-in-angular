@@ -8,12 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'airbnb';
   signupPopUp:boolean = false;
-  slideAnimation:boolean = false;
 
   // data from header to app component 
   onSignupClick(event:boolean){
     this.signupPopUp = event;
-    this.slideAnimation = event;
   }
   // data from signup to app component 
   onSignupClose(event:boolean){

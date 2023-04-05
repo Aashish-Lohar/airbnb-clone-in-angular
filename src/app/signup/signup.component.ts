@@ -7,13 +7,11 @@ import { Component, EventEmitter, Output,Input, Renderer2, ViewChild, ElementRef
 })
 export class SignupComponent {
   @Output() signupCloseEvent = new EventEmitter<boolean>();
-  @Input() slideUp!:boolean;
   @ViewChild('signup')
   signup!:ElementRef;
   constructor(private renderer:Renderer2, private el:ElementRef){}
 
   ngOnInit(){
-    console.log('slideUp',this.slideUp);
     
   }
 

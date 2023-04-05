@@ -1,0 +1,28 @@
+@import "../../mixin/mixin";
+
+.stays-list{
+    @include devices(tablet) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        .stay{
+            .slide{
+                .slide-img-container{
+                    height: 16rem;
+                }
+            }
+        }
+    }
+
+}
+.favourite{
+    @include devices(tablet) {
+        // display: none!important;
+        top: 2rem;
+        right: 3rem;
+    }
+}
+
+.stay-title-and-short-details{
+    @include devices(tablet) {
+        width: 88%;
+    }
+}

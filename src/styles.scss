@@ -1,3 +1,4 @@
+@import "./mixin/mixin";
 @font-face {
     font-family: 'AirbnbCereal_W_Md';
     src: url('./assets/fonts/AirbnbCereal_W_Md.otf');
@@ -98,6 +99,9 @@ body{
             @include devices(mobile) {
                 display: none!important;
             }
+            @include devices(tablet) {
+                display: none!important;
+            }
         }
         .slick-next{
             display: block !important;
@@ -117,6 +121,9 @@ body{
                 font-weight: 700;
             }
             @include devices(mobile) {
+                display: none!important;
+            }
+            @include devices(tablet) {
                 display: none!important;
             }
         }
@@ -147,7 +154,7 @@ body{
 
 
 
-
+// slider for stays on homepage 
 .stay{
     .slick-slider {
         width: 88%;
@@ -203,6 +210,26 @@ body{
         .slick-next{
             display: block!important;
         }
+    }
+}
+
+// slider for mobile view on stays page 
+.mobile-stay-page{
+    .mobile-carousel {
+        .slick-slider {
+            width: 100%;
+            margin: 0.8rem auto!important;
+            position: relative;
+            .slick-prev{
+                display: none!important;
+            }
+            .slick-next{
+                display: none!important;
+            }
+            .slick-dots{
+                display: none!important;
+            }      
+          }
     }
 }
   

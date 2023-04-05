@@ -44,7 +44,7 @@ export class MapComponent {
   intializeMap(){
     if(this.map) return;
     
-    this.map = map(this.mapRef.nativeElement,{attributionControl:false}).setView(this.DEFAULT_LATLNG);
+    this.map = map(this.mapRef.nativeElement,{attributionControl:false,zoomControl:false}).setView(this.DEFAULT_LATLNG);
     this.map.setZoom(4);
 
     tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png').addTo(this.map);
