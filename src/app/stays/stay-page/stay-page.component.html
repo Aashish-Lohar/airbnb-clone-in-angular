@@ -1,7 +1,6 @@
-<div class="stay-page lg:px-20 lg:pt-6 sm:mx-auto hidden lg:block lg:mx-auto ">
-
+<div class="mobile-stay-page stay-page lg:px-20 lg:pt-6 md:block lg:block lg:mx-auto ">
     <div class="mobile-carousel block sm:block md:hidden xl:hidden lg:hidden">
-        <ngx-slick-carousel class="w-[25rem]" 
+        <ngx-slick-carousel class="w-full" 
         #slickModal="slick-carousel" 
         [config]="slideConfig" 
         (init)="slickInit($event)"
@@ -20,7 +19,7 @@
       </ngx-slick-carousel>
     </div>
     <!-- stay-title  -->
-    <div class="stay-name-container p-6 sm:p-6 lg:p-0 border-b-[1px] lg:border-none">
+    <div class="stay-name-container p-6 md:px-10 lg:p-0 border-b-[1px] lg:border-none">
         <div class="stay-name text-2xl">
             <h1>Whispering Pines Cottages|Treehouse|Tandi</h1>
         </div>
@@ -58,36 +57,33 @@
     </div>
 
     <!-- stay-images  -->
-    <div class="stay-images-container pt-6 hidden sm:hidden md:block lg:block">
-        <div class=" stay-images lg:grid lg:grid-cols-2 gap-2 rounded">
-            <div class=" first-image hover:brightness-[0.8] transition-all ease-in delay-100">
-                <img class="rounded-xl" src="{{stay_images[0]}}" alt="">
+    <div class="stay-images-container md:pt-0 lg:pt-6 hidden sm:hidden md:block lg:block xl:block">
+        <div class=" stay-images md:px-8 lg:py-8 lg:px-0 md:h-[24rem] lg:h-[25rem] grid md:grid-cols-2 md:grid-rows-1 lg:grid-rows-1 lg:grid-cols-2 gap-2 lg:gap-0 ">
+            <div class=" first-image row-span-1 hover:brightness-[0.8] transition-all ease-in delay-100">
+                <img class="rounded-l-xl object-cover h-full" src="{{stay_images[0]}}" alt="">
             </div>
-            <div class="other-images grid grid-cols-2 grid-rows-2 gap-2">
-                <div class="image rounded h-[10.7rem] overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
+            <div class="other-images grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 gap-2 ">
+                <div class="image row-span-1  overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
                     <img class="w-full object-cover h-full" src="{{stay_images[1]}}" alt="">
                 </div>
-                <div class="image rounded h-[10.7rem] overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
+                <div class="image row-span-1 rounded-tr-xl overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
                     <img class="w-full object-cover h-full" src="{{stay_images[2]}}" alt="">
                 </div>
-                <div class="image rounded h-[10.7rem] overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
+                <div class="image row-span-1  overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
                     <img class="w-full object-cover h-full" src="{{stay_images[3]}}" alt="">
                 </div>
-                <div class="image rounded h-[10.7rem] overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
+                <div class="image row-span-1 rounded-br-xl  overflow-hidden hover:brightness-[0.8] transition-all ease-in delay-100">
                     <img class="w-full object-cover h-full" src="{{stay_images[4]}}" alt="">
                 </div>
             </div>
 
-        </div>
-
-       
-
+        </div>    
 
     </div>
 
     <!-- stay-details  -->
-    <div class="stay-details px-6 lg:px-0 flex flex-wrap  border-b-[1px]">
-        <div class="lg:w-[60%]">
+    <div class="stay-details px-6 md:px-10 lg:px-0 flex flex-wrap  border-b-[1px]">
+        <div class="md:w-[60%] lg:w-[60%]">
             <div class="stay-and-owner-details flex  justify-between pt-6 lg:pt-12 pb-6 border-b-[1px] ">
                 <div class="owner-name">
                     <h2 class="text-2xl">Treehouse hosted by Daleep</h2>
@@ -208,9 +204,9 @@
             </div>
 
             <!-- pay for stay  -->
-            <div class="relative hidden lg:block w-[40%] pt-12 pb-6">
-             <div class="sticky top-32 card ml-20">
-                 <div class="price-and-reviews flex justify-between text-sm">
+            <div class="relative hidden md:block lg:block w-[40%] pt-12 pb-6">
+             <div class="sticky top-32 card md:ml-12 lg:ml-20">
+                 <div class="price-and-reviews flex flex-wrap justify-between text-sm">
                      <div class="price text-lg">₹5,570 <span class="text-sm font-light">night</span> </div>
                      <div class="ratings flex items-center">
                          <div class="star mr-2">
@@ -228,8 +224,10 @@
 
 </div>
 
+
+
   <!-- reviews  -->
-  <div class="lg:py-12 px-6 lg:px-20 sm:mx-auto hidden lg:block  lg:mx-auto ">
+  <div class="py-8 mb-10 md:mb-0 lg:mb-0 md:py-12 lg:py-12 px-6 md-px-20 lg:px-20 sm:mx-auto lg:block md:mx-auto  lg:mx-auto ">
     <div class="ratings flex items-center text-xl mb-8">
         <div class="star mr-2">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 14px; width: 14px; fill: currentcolor;"><path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path></svg>
@@ -240,14 +238,15 @@
         </div>
     </div>
 
-    <div class="hidden lg:block">
+    <div class="lg:block">
         <div class="ratings-criteria">
             <div class="criterias flex items-stretch  gap-x-28 gap-y-4 flex-wrap">
-                <div class="font-custom flex items-center justify-between w-[40%]" *ngFor="let r of ratingCriteria">
-                    <div>{{r.title}} </div>
-                    <div class="flex h-1 w-[25%] bg-neutral-200 dark:bg-neutral-600">
+                <div class="font-custom flex gap-2 items-center w-full md:w-[40%] lg:w-[40%]" *ngFor="let r of ratingCriteria">
+                    <div class="w-[50%] md:w-[60%] lg:w-[60%]">{{r.title}} </div>
+                    <div class="flex h-1 w-[40%] md:w-[25%] lg:w-[25%] bg-neutral-200 dark:bg-neutral-600">
                         <div class="h-1 bg-[#ff385c]" style="width: {{r.rating*20}}%"></div>
                     </div>
+                    <div class="w-[5%]">{{r.rating}}</div>
                 </div>
             </div>
         </div>
@@ -256,28 +255,3 @@
 
 
 
-<div class="mobile-stay-page">
-
-    <!-- mobile -carousel  -->
-    <div class="mobile-carousel block sm:block md:hidden xl:hidden lg:hidden">
-        <ngx-slick-carousel class="" 
-        #slickModal="slick-carousel" 
-        [config]="slideConfig" 
-        (init)="slickInit($event)"
-        (breakpoint)="breakpoint($event)"
-        (afterChange)="afterChange($event)"
-        (beforeChange)="beforeChange($event)">
-          <div ngxSlickItem *ngFor="let slide of slides" class="slide cursor-pointer" routerLink="/stay/1">
-              <div class="flex  h-64 w-full flex-col justify-end rounded-none lg:rounded-xl relative overflow-hidden"
-              style="background-position: center center;background-size: cover;
-                  background-repeat: no-repeat;">
-                  <img src="{{ slide.img }}" alt="AirMax Pro"
-                  class="object-cover w-full h-full rounded-none lg:rounded-xlz-0" />
-              </div>
-              
-          </div>
-      </ngx-slick-carousel>
-    </div>
-
-    
-</div>

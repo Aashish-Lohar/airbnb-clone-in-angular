@@ -14,6 +14,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { StopBodyScrollDirective } from './stop-body-scroll.directive';
+import { WishlistComponent } from './wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { StopBodyScrollDirective } from './stop-body-scroll.directive';
     MapComponent,
     FooterComponent,
     SignupComponent,
-    StopBodyScrollDirective
+    StopBodyScrollDirective,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

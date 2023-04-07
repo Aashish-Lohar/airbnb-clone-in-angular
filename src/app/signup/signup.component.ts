@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output,Input, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ export class SignupComponent {
   @Output() signupCloseEvent = new EventEmitter<boolean>();
   @ViewChild('signup')
   signup!:ElementRef;
-  constructor(private renderer:Renderer2, private el:ElementRef){}
+  constructor(private renderer:Renderer2, private el:ElementRef, private router:Router){}
 
   ngOnInit(){
     
@@ -24,5 +25,7 @@ export class SignupComponent {
     console.log('signupClose() clicked');
     this.renderer.addClass(this.signup.nativeElement,'top-full')
     this.signupCloseEvent.emit(false);
+    this.router.navigateByUrl('')
   }
+
 }

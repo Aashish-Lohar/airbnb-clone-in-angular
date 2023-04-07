@@ -232,6 +232,11 @@ body{
           }
     }
 }
+
+
+.leaflet-pane, .leaflet-map-pane{
+    z-index: 0!important;
+}
   
 body .slick-prev, 
 body .slick-next {

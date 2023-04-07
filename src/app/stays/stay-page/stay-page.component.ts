@@ -13,6 +13,9 @@ export class StayPageComponent {
   }
   ngOnInit(){
       this.stayId = this.route.snapshot.paramMap.get("id");
+      console.log('stayid',this.stayId);
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   imageSvg(img:any){
     return `data:image/svg+xml;base64,${btoa(img)}`
