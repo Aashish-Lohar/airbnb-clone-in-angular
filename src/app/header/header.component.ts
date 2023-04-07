@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component,ElementRef,HostListener,Output,Renderer2, ViewChild, EventEmitter, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,13 +16,32 @@ export class HeaderComponent implements AfterViewInit  {
   @ViewChild('userMenu')
   userMenu!:ElementRef;
 
+  @ViewChild('search')
+  search!:ElementRef;
+
   @ViewChildren('navBtn')
   mobileNavBtn!:QueryList<ElementRef>;
 
-  constructor(private renderer:Renderer2,private elementRef:ElementRef){}
+  constructor(
+    private renderer:Renderer2,
+    private elementRef:ElementRef,
+    private location:Location){}
 
   ngOnInit(){
+    const currentUrl = this.location.onUrlChange((url)=>{
+      console.log('url',url);
+      if(url==='/'){
+        this.addRemoveActive(0);
+      }
+      if(url==='/wishlist'){
+        this.renderer.removeChild(this.search.nativeElement.parentNode,this.search);
+        this.addRemoveActive(1);
+      }
 
+      if(url==='/signup'){
+        this.addRemoveActive(2);
+      }
+    });
   }
 
   ngAfterViewInit(){
