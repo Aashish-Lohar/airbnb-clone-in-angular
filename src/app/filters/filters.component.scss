@@ -1,0 +1,41 @@
+mat-slider{
+    width: 97%;
+    // margin: 1rem 3rem;
+}
+
+.activeRoomsBeds{
+    background-color: black;
+    color: white;
+}
+
+.selectedPropertyTypes{
+    border: 2px solid black;
+    animation-duration: 0.1s;
+    animation-name: pressEffect;
+}
+
+@keyframes pressEffect {
+    from {
+        transform: scale(1);
+    }
+  
+    to {
+      transform: scale(0.9);
+    }
+  }
+
+  #filterPopUp{
+    animation-duration: 0.6s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      top:100%
+    }
+  
+    to {
+      top:50%
+    }
+  }
+  

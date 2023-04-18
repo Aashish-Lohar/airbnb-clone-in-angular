@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      custom: ['My Custom Font', 'air_lt'],
+      custom: ['My Custom light Font', 'air_lt'],
+      customBold:['My Custom bold Font', 'air_bt']
     }
   },
   plugins: [],

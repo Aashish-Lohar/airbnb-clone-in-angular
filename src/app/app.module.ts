@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { StopBodyScrollDirective } from './stop-body-scroll.directive';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,10 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     SlickCarouselModule,
     BrowserAnimationsModule,
     HammerModule,
-    LeafletModule
+    LeafletModule,
+    MatSliderModule,
+    FormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
