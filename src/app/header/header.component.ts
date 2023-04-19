@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component,ElementRef,HostListener,Output,Renderer2, ViewChild, EventEmitter, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ActionService } from '../services/action.service';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +26,8 @@ export class HeaderComponent implements AfterViewInit  {
   constructor(
     private renderer:Renderer2,
     private elementRef:ElementRef,
-    private location:Location){}
+    private location:Location,
+    private actionService:ActionService){}
 
   ngOnInit(){
     const currentUrl = this.location.onUrlChange((url)=>{
@@ -41,15 +43,13 @@ export class HeaderComponent implements AfterViewInit  {
       if(url==='/signup'){
         this.addRemoveActive(2);
       }
+      if(url ==='/stay/1'){
+        this.addRemoveActive(3);
+      }
     });
   }
 
   ngAfterViewInit(){
-    console.log(this.mobileNavBtn);
-    // this.mobileNavBtn.forEach((el,i)=>{
-    //   el.nativeElement.classList.remove('active')
-    // })
-    
   }
 
   addRemoveActive(index:number){
@@ -78,8 +78,11 @@ export class HeaderComponent implements AfterViewInit  {
 
   onClickSignup(){
     console.log('click');
-    
     this.signupOpen.emit(true);
+  }
+
+  onClickFilter(){
+    this.actionService.setFilterPopupState(false);
   }
 
 

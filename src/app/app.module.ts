@@ -17,7 +17,7 @@ import { StopBodyScrollDirective } from './stop-body-scroll.directive';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     LeafletModule,
     MatSliderModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule
   ],
   providers: [],

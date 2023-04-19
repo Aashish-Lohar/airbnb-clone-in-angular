@@ -1,5 +1,5 @@
 
-<div class=" sticky top-[4.5rem] md:top-[5.5rem] lg:top-[5.5rem] z-[1] bg-white filters flex items-center gap-9 lg:mt-5">
+<div class=" fixed w-full top-[4.5rem] md:top-[6.2rem] lg:top-[5.5rem] z-[1] bg-white filters flex items-center gap-9 ">
     <ngx-slick-carousel class="carousel" 
       #slickModal="slick-carousel" 
       [config]="slideConfig" 
@@ -11,7 +11,7 @@
         <div ngxSlickItem 
         #slide
         *ngFor="let slide of data;let i='index'" 
-        class="slide opacity-60 transition-opacity ease-in duration-200 hover:text-black hover:opacity-100 border-b-2 border-b-transparent  hover:border-b-slate-300"
+        class="slide opacity-60 transition-opacity ease-in duration-200 hover:text-black hover:opacity-100 border-b-2 border-b-transparent cursor-pointer hover:border-b-slate-300"
         (click)="addRemove(i)">
             <div class="filter-img whitespace-nowrap text-xs text-center flex flex-col items-center py-1 my-3 gap-2  ">
                 <div class="stay-img  w-6 ">
@@ -22,7 +22,7 @@
         </div>
     </ngx-slick-carousel>
     <div class="hidden sm:hidden md:block lg:block more-filters cursor-pointer py-2 rounded-xl border-[1px]">
-        <div class="flex gap-2 text-xs px-4 py-2 items-center" (click)="filterPopupClose=false">
+        <div class="flex gap-2 text-xs px-4 py-2 items-center" (click)="openCloseFilterPopup(false)">
             <div class="filter-icon">
                 <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display:block;height:14px;width:14px;fill:currentColor" aria-hidden="true" role="presentation" focusable="false"><path d="M5 8c1.306 0 2.418.835 2.83 2H14v2H7.829A3.001 3.001 0 1 1 5 8zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6-8a3 3 0 1 1-2.829 4H2V4h6.17A3.001 3.001 0 0 1 11 2zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path></svg>
             </div>
@@ -31,15 +31,17 @@
     </div>
 </div>
 
+<!-- filter popup on click  -->
+<div class="filter-popup"  [ngClass]="{'hidden':filterPopupClose}">
+    <div class="flex w-screen  fixed top-0 bottom-0 h-screen  bg-black opacity-30 z-[415]"></div>
 
-<div class="filter-popup" *ngIf="!filterPopupClose">
-    <div class="flex w-screen fixed top-0 bottom-0 h-screen  bg-black opacity-30 z-[415]"></div>
-
-    <div class="" StopBodyScroll>
-        <div id="filterPopUp" class="filter-modal ease-in-out duration-[5000] signup-card card pr-0 fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-[416] bottom-0 md:bottom-auto lg:bottom-auto w-full md:w-[45%] lg:w-[66%]">
-            <div class="relative header text-center border-b-[1px] pb-4">
+    <div *ngIf="!filterPopupClose" StopBodyScroll></div>
+    <div class="" >
+        <div id="filterPopUp" class="filter-modal ease-in-out duration-[5000] signup-card card pr-0 fixed top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-[416]  md:bottom-auto lg:bottom-auto w-full md:w-[90%] lg:w-[66%]">
+            <!-- filter popup header  -->
+            <div class="relative filter-header text-center border-b-[1px] pb-4">
                 <div class="filter-popup-close absolute">
-                    <button (click)="filterPopupClose=true">
+                    <button (click)="openCloseFilterPopup(true)">
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg>
                     </button>
                 </div>
@@ -47,13 +49,13 @@
                     <h2 class="font-custom font-bold">Filters</h2>
                 </div>
             </div>
-            <div class="filter-types py-8 overflow-y-scroll h-[25rem]">
+            <div class="filter-types py-8 overflow-y-scroll h-[40rem] md:h-[60rem] lg:h-[25rem]">
                 <!-- price-range  -->
                 <div class="price-range relative border-b-[1px] pb-3">
                     <h3 class="text-xl ">Price range</h3>
                     <p class="opacity-60">The average nightly price is ‎₹13,371</p>
-                    <div class="my-4 mx-10">
-                        <mat-slider  min={{minRange}} max={{maxRange}}>
+                    <div class="my-4 ml-0 mr-10 lg:ml-4">
+                        <mat-slider class="!ml-4"  min={{minRange}} max={{maxRange}}>
                             <input [(ngModel)]="startRange" value={{startRange}} matSliderStartThumb>
                             <input [(ngModel)]="endRange" value={{endRange}} matSliderEndThumb>
                           </mat-slider>
@@ -74,7 +76,7 @@
                 <!-- types of place  -->
                 <div class="types-of-place border-b-[1px] pt-8 pb-3">
                     <h3 class="text-xl ">Type of place</h3>
-                    <div class="places-type-selection grid grid-cols-2 py-6">
+                    <div class="places-type-selection grid grid-cols-1 lg:grid-cols-2 gap-4 py-6">
                         <div class="checkbox flex gap-4 items-baseline w-full" *ngFor="let t of typesOfPlace">
                             <!-- <input type="checkbox" name="" id={{t.id}}> -->
                             <mat-checkbox class="example-margin" [(ngModel)]="t.checked">
@@ -101,8 +103,8 @@
                     <div>
                         <div class="bedrooms">
                             <div class="font-custom font-bold py-6">Bedrooms</div>
-                            <div class="flex gap-2">
-                                <div #roomQty (click)="addRemoveRoomsBeds(myRoomQty,i)" *ngFor="let room of bedrooms; let i=index" class="qty hover:border-slate-900 cursor-pointer  px-6 py-2 border-[1px] font-custom rounded-3xl">
+                            <div class="flex gap-2 overflow-x-scroll lg:overflow-visible">
+                                <div #roomQty (click)="addRemoveRoomsBeds(myRoomQty,i)" *ngFor="let room of bedrooms; let i=index" class="qty flex items-center hover:border-slate-900 cursor-pointer px-[1.8rem] py-[0.6rem] lg:px-6 lg:py-2 border-[1px] font-custom rounded-3xl mb-3">
                                     {{room}} <span *ngIf="i===8">+</span>
                                 </div>
                             </div>
@@ -110,8 +112,8 @@
 
                         <div class="beds">
                             <div class="font-custom font-bold py-6">Beds</div>
-                            <div class="flex gap-2">
-                                <div #bedQty (click)="addRemoveRoomsBeds(myBedQty,i)" *ngFor="let bed of beds; let i=index" class="qty hover:border-slate-900 cursor-pointer  px-6 py-2 border-[1px] font-custom rounded-3xl">
+                            <div class="flex gap-2 overflow-x-scroll lg:overflow-visible">
+                                <div #bedQty (click)="addRemoveRoomsBeds(myBedQty,i)" *ngFor="let bed of beds; let i=index" class="qty flex items-center hover:border-slate-900 cursor-pointer px-[1.8rem] py-[0.6rem] lg:px-6 lg:py-2 border-[1px] font-custom rounded-3xl mb-3">
                                     {{bed}} <span *ngIf="i===8">+</span>
                                 </div>
                             </div>
@@ -119,8 +121,8 @@
 
                         <div class="bathrooms">
                             <div class="font-custom font-bold py-6">Bathrooms</div>
-                            <div class="flex gap-2">
-                                <div #bathQty (click)="addRemoveRoomsBeds(myBathRoomQty,i)" *ngFor="let room of bathrooms; let i=index" class="qty hover:border-slate-900 cursor-pointer  px-6 py-2 border-[1px] font-custom rounded-3xl">
+                            <div class="flex gap-2 overflow-x-scroll lg:overflow-visible">
+                                <div #bathQty (click)="addRemoveRoomsBeds(myBathRoomQty,i)" *ngFor="let room of bathrooms; let i=index" class="qty flex items-center hover:border-slate-900 cursor-pointer px-[1.8rem] py-[0.6rem] lg:px-6 lg:py-2 border-[1px] font-custom rounded-3xl mb-3">
                                     {{room}} <span *ngIf="i===8">+</span>
                                 </div>
                             </div>
@@ -133,8 +135,8 @@
                 <!-- property types  -->
                 <div class="property-type">
                     <div class="py-8 text-xl">Property type</div>
-                    <div class="flex justify-around">
-                        <div class="property w-[22%] h-32 border-[1px] rounded-2xl flex flex-col justify-between p-4 cursor-pointer hover:border-black transition ease-in duration-200" 
+                    <div class="flex flex-wrap justify-around">
+                        <div class="property w-[45%] md:w-[22%] lg:w-[22%] mb-4 h-32 border-[1px] rounded-2xl flex flex-col justify-between p-4 cursor-pointer hover:border-black transition ease-in duration-200" 
                         (click)="togglePropertyType(i)"
                         *ngFor="let type of propertyType;let i=index">
                             <div class="img w-8" >
@@ -148,6 +150,17 @@
                 </div>
 
             </div>
+
+            <!-- filter footer  -->
+            <div class="filter-footer flex items-center justify-between px-4 pt-6 border-t-2 w-full my-0 py-0">
+                <div>
+                    <span class="underline cursor-pointer">Clear all</span>
+                </div>
+                <div class="show-stays">
+                    <button class="w-40 py-3 rounded-md bg-black text-white">Show 646 stays</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@ export class StaysComponent {
   constructor() {}
   ngOnInit(): void {}
   list:boolean=true;
-  stays = [1,2,3,4,5,6,7,8]
+  stays = [1,2,3,4,5,6,7,8,2,3,4,5,6,7,8]
   slides = [
   { img: "https://a0.muscache.com/im/pictures/3321347d-8c65-4d06-93f3-4c2e2162512c.jpg?im_w=720" },
   { img: "https://a0.muscache.com/im/pictures/miso/Hosting-26117817/original/2fd911ac-1015-4f51-9ed2-42228956ad8d.jpeg?im_w=720" },
